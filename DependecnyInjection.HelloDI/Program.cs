@@ -10,7 +10,9 @@ namespace DependecnyInjection.HelloDI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
+            IMessageWriter writer = new ConsoleMessageWriter();
+            Salutation salutation = new Salutation(writer);
+            salutation.Exclaim();
         }
     }
 }
